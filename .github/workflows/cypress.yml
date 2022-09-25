@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Setup sonarqube
-      uses: warchant/setup-sonar-scanner@v3
+      uses: sonarsource/sonarqube-scan-action@master
     - name: Run sonarqube
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
