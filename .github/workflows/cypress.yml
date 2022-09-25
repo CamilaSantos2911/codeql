@@ -8,7 +8,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Setup sonarqube
-      uses: ./
+      uses: warchant/setup-sonar-scanner@v3
   
     - name: Run sonarqube
       env:
