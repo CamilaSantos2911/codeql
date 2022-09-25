@@ -8,6 +8,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Setup sonarqube
       uses: sonarsource/sonarqube-scan-action@master
+      env:
+          SONAR_TOKEN: sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
+          SONAR_HOST_URL: http://localhost:9000 
     - name: Run sonarqube
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
