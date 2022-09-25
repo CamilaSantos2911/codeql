@@ -1,19 +1,16 @@
-name: End-to-end tests🧪
-on: [push]
+on: push
+name: SonarQube
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
+  sonarQubeTrigger:
+    name: SonarQube Trigger
+    runs-on: ubuntu-latest
     steps:
-    
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-      
-            
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+    - uses: actions/checkout@master
+    - name: Setup sonarqube
+      uses: warchant/setup-sonar-scanner@v3
+    - name: Run sonarqube
+      run: sonar-scanner \
+         -Dsonar.projectKey=sonar_test \
+         -Dsonar.sources=. \
+         -Dsonar.host.url=http://localhost:9000 \
+         -Dsonar.login=sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
