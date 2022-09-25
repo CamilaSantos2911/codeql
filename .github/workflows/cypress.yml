@@ -18,6 +18,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
-       -Dsonar.host.url=https://sonarqube.com/api/sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29/search
+       -Dsonar.host.url=https://sonarqube.com/api/sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
        -Dsonar.sources=. 
        -Dsonar.login=sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
