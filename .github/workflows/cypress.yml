@@ -11,7 +11,7 @@ jobs:
       uses: warchant/setup-sonar-scanner@v3
       
     - name: API
-      run: 'curl -u admin:carboidrato29 https://sonarqube.com/api/sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29/search'
+      run: 'curl -u sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29: https://sonarqube.com/api/sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29/search'
   
     - name: Run sonarqube
       env:
