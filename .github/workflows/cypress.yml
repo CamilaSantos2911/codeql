@@ -9,7 +9,7 @@ jobs:
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v3
     - name: Run sonarqube
-      run: sonar-scanner 
+      run: sonar-scanner -X
        -Dsonar.projectKey=testando
        -Dsonar.sources=. 
        -Dsonar.host.url=http://localhost:9000 
