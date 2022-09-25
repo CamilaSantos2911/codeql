@@ -3,7 +3,7 @@ name: SonarQube
 jobs:
   sonarQubeTrigger:
     name: SonarQube Trigger
-    runs-on: windows-latest
+    runs-on: windows-10
     steps:
     - uses: actions/checkout@master
     - name: Setup sonarqube
