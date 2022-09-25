@@ -16,5 +16,5 @@ jobs:
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
        -Dsonar.sources=. 
-       -Dsonar.host.url=http://localhost:9000 
+       -Dsonar.host.url=http://179.232.143.216:9000
        -Dsonar.login=sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
