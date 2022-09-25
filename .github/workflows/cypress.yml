@@ -3,15 +3,15 @@ name: SonarQube
 jobs:
   sonarQubeTrigger:
     name: SonarQube Trigger
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - name: Setup sonarqube
-      uses: sonarsource/sonarqube-scan-action@master
-      env:
-          SONAR_TOKEN: sqp_9ece2af8033853149e1f81f7601e2ad8f5500c29
-          SONAR_HOST_URL: http://localhost:9000 
+      uses: ./
+  
     - name: Run sonarqube
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
        -Dsonar.sources=. 
