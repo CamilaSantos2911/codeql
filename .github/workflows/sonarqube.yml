@@ -11,7 +11,7 @@ jobs:
       uses: warchant/setup-sonar-scanner@v3
       
     - name: API
-      run: ' curl -s -u admin:carboidrato2911 http://localhost:9000/api/qualitygates/project_status?projectKey=local'
+      run: ' curl -s -u admin:carboidrato2911 https://sonarqube.com/api/sqp_0ae53f233c581709d31888f8c98cf44018e51f0e/search
       
     - name: Run sonarqube
       env:
