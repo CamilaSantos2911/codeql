@@ -1,0 +1,19 @@
+name: QA
+
+on: [push, pull_request]
+
+jobs:
+  run_qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+    services:
+      sonarqube:
+        image: sonarqube:9.6-community
+        ports:
+          - 9000:9000
