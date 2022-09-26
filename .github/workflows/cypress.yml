@@ -16,6 +16,7 @@ jobs:
     - name: Run sonarqube
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LC_ALL: "ru_RU.UTF-8"
       run: sonar-scanner -X
        -Dsonar.projectKey=testando
        -Dsonar.host.url=${{ secrets.SONAR_URL }}
