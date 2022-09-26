@@ -22,3 +22,8 @@ jobs:
        -Dsonar.host.url=${{ secrets.SONAR_URL }}
        -Dsonar.sources=. 
        -Dsonar.login=sqp_0ae53f233c581709d31888f8c98cf44018e51f0e
+    services:
+      sonarqube:
+        image: sonarqube:9.6-community
+        ports:
+          - 9000:9000   
