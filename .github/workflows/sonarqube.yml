@@ -11,7 +11,7 @@ jobs:
       uses: warchant/setup-sonar-scanner@v3
       
     - name: API
-      run: ' curl -s -u admin:carboidrato2911 https://sonarqube.com/api/sqp_0ae53f233c581709d31888f8c98cf44018e51f0e/search'
+      run: ' curl -s -u admin:carboidrato2911 https://sonarqube.com/api/sqp_fe878e7ec800b45961a01cb452423cd5200e15f8/search'
       
     - name: Run sonarqube
       env:
@@ -21,7 +21,7 @@ jobs:
        -Dsonar.projectKey=local
        -Dsonar.host.url=${{ secrets.SONAR_URL }}
        -Dsonar.sources=. 
-       -Dsonar.login=sqp_0ae53f233c581709d31888f8c98cf44018e51f0e
+       -Dsonar.login=sqp_fe878e7ec800b45961a01cb452423cd5200e15f8
     services:
       sonarqube:
         image: sonarqube:9.6-community
